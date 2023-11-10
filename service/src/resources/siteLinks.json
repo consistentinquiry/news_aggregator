@@ -1,0 +1,8 @@
+{
+    "bbc":
+    {
+        "name": "bbc",
+        "domain": "www.bbc.co.uk",
+        "topStories": "https://www.bbc.co.uk/news"
+    }
+}
