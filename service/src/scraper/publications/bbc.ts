@@ -12,10 +12,12 @@ export const getSpecificStoryData = async (page: Page) => {
 
 export const getTopStoryData = async (page: Page) => {
   const titles = await page.$$eval(".gs-c-promo-heading__title", (titles) =>
+    //@ts-ignore
     titles.map((title) => title.textContent?.trim())
   );
 
   const subheadings = await page.$$eval(".gs-c-promo-summary", (subheadings) =>
+    //@ts-ignore
     subheadings.map((subheading) => subheading.textContent?.trim())
   );
 
@@ -38,7 +40,14 @@ export const getTopStoryData = async (page: Page) => {
 };
 
 export const getWaitSelector = (urlStr: string) => {
-  const url = new URL(urlStr);
+  var url;
+  try{
+    console.log("urlStr: ", urlStr)
+  url = new URL(urlStr);
+  } catch (err) {
+    console.log("GOTTCHA!: ", err);
+    process.exit(1)
+  }
   if (url.hostname === siteLinks.bbc.domain) {
     if (url.pathname != "/news") {
       return "article";

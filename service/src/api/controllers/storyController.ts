@@ -31,6 +31,7 @@ export const topStoryController = async (req: Request, res: Response) => {
   if (!req.body.topStoriesUrl) {
     res.status(400).send({ message: "No top stories URL supplied" });
   }
+  console.log("topStoryUrl: ", req.body);
   try {
     const topStoryData = await scrapeData(
       req.body.topStoriesUrl,

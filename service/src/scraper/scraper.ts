@@ -16,7 +16,7 @@ export const scrapeStory = async (
 
     return storyData;
   } catch (error) {
-    console.log("Something went wrong: ", error);
+    console.log("scrapeStory(): Something went wrong: ", error);
   } finally {
     browser.close();
   }

@@ -4,7 +4,7 @@ import { specificStoryController, topStoryController } from "../controllers/stor
 const storyRouter = Router();
 
 storyRouter.get('/story', specificStoryController);
-storyRouter.get('/topStories', topStoryController);
+storyRouter.post('/topStories', topStoryController);
 
 export default storyRouter;
 
